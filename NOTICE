@@ -1,0 +1,6 @@
+DACS Agent Reference
+Copyright 2026 contributors to dacs-agent-reference
+
+This repository is an independent reference implementation for the DACS
+lifecycle. DACS specifications and third-party SDKs are separate works and
+remain subject to their own licenses and governance.

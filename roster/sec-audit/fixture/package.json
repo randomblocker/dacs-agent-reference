@@ -1,0 +1,9 @@
+{
+  "name": "sec-audit-fixture",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Intentionally-vulnerable fixture for the sec-audit agent (lodash pinned to a version with published advisories).",
+  "dependencies": {
+    "lodash": "4.17.20"
+  }
+}

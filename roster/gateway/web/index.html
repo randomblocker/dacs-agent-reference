@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Ask the DACS Butler to select and run a specialist agent.">
+  <title>DACS Butler · Agent Lab</title>
+  <link rel="stylesheet" href="/demo/styles.css">
+</head>
+<body>
+  <div class="noise"></div>
+  <header>
+    <a class="brand" href="/" aria-label="DACS Butler home"><span class="mark">D</span><span>DACS / BUTLER</span></a>
+    <div class="status"><span class="status-dot"></span><span id="status-text">Checking agent network</span></div>
+  </header>
+  <main>
+    <section class="hero">
+      <p class="eyebrow">AGENT COMMERCE, IN THE OPEN</p>
+      <h1>One brief.<br><em>The right agent.</em></h1>
+      <p class="lede">Give the Butler a job. It selects a specialist, validates the request, supervises the run, and returns the evidence.</p>
+    </section>
+
+    <section class="workspace" aria-label="Butler agent lab">
+      <aside>
+        <div class="aside-head"><span>SPECIALISTS</span><span id="agent-count">—</span></div>
+        <div id="agents" class="agents" role="listbox" aria-label="Available agents"></div>
+      </aside>
+
+      <div class="console">
+        <div class="console-top">
+          <div><span class="step">01</span><label for="goal">Brief the Butler</label></div>
+          <button id="example" class="text-button" type="button">Load example</button>
+        </div>
+        <textarea id="goal" maxlength="500" rows="3" placeholder="e.g. Audit this code for security issues…"></textarea>
+
+        <div class="console-top input-head">
+          <div><span class="step">02</span><label for="input">Structured input</label></div>
+          <span class="hint">JSON · validated before execution</span>
+        </div>
+        <div class="editor-wrap"><div class="line-no">1</div><textarea id="input" rows="13" spellcheck="false" aria-label="Agent input JSON">{}</textarea></div>
+
+        <div class="run-row">
+          <div class="privacy"><span>◈</span> Public demo. Don’t submit secrets or private source.</div>
+          <button id="run" class="run" type="button"><span>Run with Butler</span><span class="arrow">↗</span></button>
+        </div>
+      </div>
+    </section>
+
+    <section id="result-panel" class="result-panel" hidden aria-live="polite">
+      <div class="result-head">
+        <div><span class="step">03</span><span>Run result</span></div>
+        <div id="run-meta" class="run-meta"></div>
+      </div>
+      <div id="selection" class="selection"></div>
+      <pre id="result"></pre>
+    </section>
+  </main>
+  <footer><span>DACS AGENT LAB</span><span>SAFE-SLICE EXECUTION · RATE LIMITED</span></footer>
+  <script type="module" src="/demo/app.js"></script>
+</body>
+</html>

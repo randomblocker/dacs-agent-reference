@@ -1,0 +1,12 @@
+{
+  "name": "dep-upgrade-fixture",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Standalone demo target for the Dependency-Upgrade Agent — lodash deliberately pinned to a version with real published advisories (GHSA-35jh-r3h4-6jhm et al., fixed in 4.17.21). NOT part of the repo workspace.",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "dependencies": {
+    "lodash": "4.17.20"
+  }
+}

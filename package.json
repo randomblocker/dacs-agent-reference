@@ -1,0 +1,63 @@
+{
+  "name": "dacs-agent-reference",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Sanitized reference implementations for DACS agents and an atomic Demos Work proof of concept.",
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  },
+  "scripts": {
+    "setup": "bash scripts/setup-sdk.sh",
+    "start": "tsx src/main.ts",
+    "live": "tsx src/live/run.ts",
+    "src:evaldemo": "tsx src/evaluator-demo.ts",
+    "roster:butler": "tsx roster/procurement-butler/demo.ts",
+    "roster:oracle": "tsx roster/oracle-desk/demo.ts",
+    "roster:oracle-live": "tsx roster/oracle-desk/demo-live-dahr.ts",
+    "roster:dd": "tsx roster/dd-researcher/demo.ts",
+    "roster:depup": "tsx roster/dep-upgrade/demo.ts",
+    "roster:depup-exec": "tsx roster/dep-upgrade/demo-execute.ts",
+    "roster:eval": "tsx roster/evalbot/demo.ts",
+    "roster:treasury": "tsx roster/treasury-ops/demo.ts",
+    "roster:sitecheck": "tsx roster/site-auditor/demo.ts",
+    "roster:secaudit": "tsx roster/sec-audit/demo.ts",
+    "roster:secaudit-deep": "tsx roster/sec-audit/demo-deep.ts",
+    "roster:negotiate": "tsx roster/audit-negotiator/demo.ts",
+    "roster:subcontract": "tsx roster/subcontract/demo.ts",
+    "roster:l2ps": "tsx roster/negotiation-l2ps/live-peers.ts",
+    "auditor:serve": "tsx roster/negotiation-l2ps/seller-main.ts",
+    "fixed-seller:serve": "tsx roster/negotiation-l2ps/fixed-seller-main.ts",
+    "sponsored-post:serve": "tsx roster/negotiation-l2ps/sponsored-post-main.ts",
+    "publisher:test-demo": "tsx roster/publisher-agent/demo.ts",
+    "roster:comply": "tsx roster/compliance/demo.ts",
+    "roster:gateway": "tsx roster/gateway/demo.ts",
+    "gateway:serve": "tsx roster/gateway/main.ts",
+    "dacs:x402": "tsx roster/dacs/demo-x402.ts",
+    "dacs:paydem": "tsx roster/dacs/demo-paydem.ts",
+    "dacs:market": "tsx roster/dacs/demo-market.ts",
+    "dacs:ecosystem": "tsx roster/dacs/demo-ecosystem.ts",
+    "dacs:live": "tsx roster/dacs/live/run-live.ts",
+    "dacs:l1": "tsx roster/dacs/live/l1-paydem.ts",
+    "dacs:l2": "tsx roster/dacs/live/l2-x402.ts",
+    "dacs:l3": "tsx roster/dacs/live/l3-butler-basket.ts",
+    "dacs:l4": "tsx roster/dacs/live/l4-full-basket.ts",
+    "dacs:republish": "tsx roster/dacs/live/republish-listings.ts",
+    "demoswork:poc": "tsx src/demoswork/oracle-poc.ts",
+    "demoswork:test": "tsx --test src/demoswork/*.test.ts",
+    "security:check": "node scripts/check-no-secrets.mjs",
+    "typecheck": "tsc --noEmit",
+    "roster:test": "tsx --test roster/**/*.test.ts",
+    "src:test": "tsx --test src/**/*.test.ts",
+    "test": "npm run roster:test && npm run src:test"
+  },
+  "comment": "@kynesyslabs/dacs is symlinked into node_modules from ./sdk (see README) rather than a file: dep, to avoid re-installing the SDK's heavy chain deps (demosdk/viem/x402) that the pure barrel never loads.",
+  "dependencies": {
+    "viem": "^2.52.2"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.0"
+  }
+}
