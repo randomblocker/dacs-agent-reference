@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Sanitized reference implementations for DACS agents and an atomic Demos Work proof of concept.",
+  "description": "Sanitized reference implementations for DACS agents.",
   "engines": {
     "node": "^20.19.0 || >=22.12.0"
   },
@@ -43,8 +43,6 @@
     "dacs:l3": "tsx roster/dacs/live/l3-butler-basket.ts",
     "dacs:l4": "tsx roster/dacs/live/l4-full-basket.ts",
     "dacs:republish": "tsx roster/dacs/live/republish-listings.ts",
-    "demoswork:poc": "tsx src/demoswork/oracle-poc.ts",
-    "demoswork:test": "tsx --test src/demoswork/*.test.ts",
     "security:check": "node scripts/check-no-secrets.mjs",
     "typecheck": "tsc --noEmit",
     "roster:test": "tsx --test roster/**/*.test.ts",
