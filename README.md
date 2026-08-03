@@ -2,8 +2,7 @@
 
 Copyable reference implementations for agents that use the DACS lifecycle:
 Identify, Vet, Negotiate, Settle, Deliver and Verify. The repository includes
-offline agent cores, live-adapter boundaries, native DEM and x402 examples,
-and an experimental atomic Demos Work model.
+offline agent cores, live-adapter boundaries, and native DEM and x402 examples.
 
 This is a fresh, sanitized source export. It contains no production wallets,
 identities, listing references, transaction records, domains, API credentials,
@@ -20,8 +19,6 @@ VPS configuration or deployment history.
 - Idempotent payment handling, nonce-safe writes and fail-closed recovery.
 - Additional reference agents for evaluation, compliance, dependency planning,
   treasury planning, site auditing and sponsored content.
-- An offline two-transaction atomic Demos Work proof of concept under
-  [`src/demoswork`](./src/demoswork).
 
 ## Safety boundary
 
@@ -30,10 +27,13 @@ are examples only and fail closed unless the caller explicitly supplies wallet,
 listing, identity and rail configuration. Never reuse production keys in a
 development checkout.
 
-The Demos Work POC is not a live node adapter or a claim of canonical support.
-Its capability gate deliberately rejects live mode until the node and SDK expose
-the required atomicity, authorization and receipt guarantees. See
-[`docs/demoswork-atomic-poc.md`](./docs/demoswork-atomic-poc.md).
+## Experimental Demos Work branch
+
+The atomic Demos Work proof of concept is intentionally isolated on the
+[`poc/demoswork-atomic`](../../tree/poc/demoswork-atomic) branch. It models an
+offline two-transaction purchase and completion flow, spends nothing, and fails
+closed when the current node or SDK lacks a required live capability. It is not
+a live node adapter or a claim of canonical support.
 
 ## Requirements
 
@@ -62,10 +62,6 @@ Do not use a personal token with write or organization-administration access.
 npm run setup
 npm test
 npm start
-
-# Atomic Demos Work reference model (offline; spends nothing)
-npm run demoswork:test
-npm run demoswork:poc
 ```
 
 Selected agent demonstrations are exposed as `roster:*` scripts in
@@ -77,8 +73,6 @@ Selected agent demonstrations are exposed as `roster:*` scripts in
 | --- | --- |
 | `src/` | ReviewBot buyer/seller/verifier reference lifecycle and ports |
 | `roster/` | Reusable specialist agents, DACS adapters and gateway examples |
-| `src/demoswork/` | Atomic Purchase Work and Completion Work reference model |
-| `docs/` | Architecture, limitations and promotion gates |
 | `scripts/setup-sdk.sh` | Reproducible pinned-SDK setup |
 
 ## Conformance
