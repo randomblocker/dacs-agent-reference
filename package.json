@@ -51,7 +51,7 @@
   },
   "comment": "@kynesyslabs/dacs is symlinked into node_modules from ./sdk (see README) rather than a file: dep, to avoid re-installing the SDK's heavy chain deps (demosdk/viem/x402) that the pure barrel never loads.",
   "dependencies": {
-    "viem": "^2.52.2"
+    "viem": "^2.55.16"
   },
   "devDependencies": {
     "@types/node": "^26.1.0",
